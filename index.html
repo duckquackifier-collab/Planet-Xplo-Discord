@@ -1,0 +1,728 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Planet Xplo - Join Now!</title>
+    <!-- Load Tailwind CSS --><script src="https://cdn.tailwindcss.com"></script>
+    <!-- Load Lucide Icons for aesthetic elements --><script type="module" src="https://unpkg.com/lucide@latest"></script>
+    <!-- Inter font from Google Fonts --><link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet">
+    <style>
+        /* Custom styles adjusted to match the lime green/yellow theme of the logo */
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #1a1a2e; /* Deep purple/blue background (A dark, space-like base) */
+            color: #ffffff;
+        }
+        .discord-btn {
+            /* Using bright lime green from the logo */
+            background-color: #A3E635; /* Tailwind Lime 400 */
+            color: #1a1a2e; /* Dark text for high contrast on the light button */
+            transition: background-color 0.2s, transform 0.1s;
+            /* Green shadow effect */
+            box-shadow: 0 4px 15px rgba(163, 230, 53, 0.5); 
+        }
+        .discord-btn:hover {
+            background-color: #84cc16; /* Tailwind Lime 500 for hover */
+            transform: translateY(-1px);
+        }
+        .card-glow {
+            /* Border and glow adjusted to match the lime accent */
+            border: 1px solid rgba(163, 230, 53, 0.2);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2), 0 0 10px rgba(163, 230, 53, 0.2);
+        }
+
+        /* Styles for the Rules and FAQ Accordions */
+        .accordion-item {
+            border-bottom: 1px solid #242646;
+        }
+        .accordion-header {
+            cursor: pointer;
+            transition: background-color 0.2s;
+        }
+        .accordion-header:hover {
+            background-color: rgba(255, 255, 255, 0.05);
+        }
+        .accordion-content {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.4s ease-out, padding 0.4s ease-out;
+            padding: 0 1.5rem;
+        }
+        .accordion-content.active {
+            max-height: 500px; /* Large enough value to contain content */
+            padding: 1rem 1.5rem 1.5rem 1.5rem;
+        }
+        .accordion-content ul {
+            list-style: disc;
+            margin-left: 1.5rem;
+            padding-left: 0.5rem;
+        }
+    </style>
+</head>
+<body class="min-h-screen antialiased flex flex-col items-center p-4 md:p-8">
+
+    <!-- Header / Navbar -->
+    <header class="w-full max-w-7xl flex justify-between items-center py-4">
+        <div class="flex items-center space-x-3">
+            <!-- Server Icon -->
+            <img 
+                src="https://i.imgur.com/3G5ltUC.png" 
+                alt="Planet Xplo Logo" 
+                class="rounded-full w-12 h-12"
+                onerror="this.onerror=null;this.src='https://placehold.co/48x48/A3E635/1a1a2e?text=Xp'; this.alt='[Logo Loading Error]'"
+            >
+            <!-- Server Name and YouTube Link -->
+            <div class="flex items-center space-x-4">
+                <h1 class="text-xl font-extrabold tracking-tight">PLANET XPLO</h1>
+                <!-- YouTube Channel Link -->
+                <a href="https://www.youtube.com/@xploplayz" target="_blank" aria-label="Visit Planet Xplo YouTube Channel" class="text-white hover:text-red-500 transition duration-150">
+                    <span data-lucide="youtube" class="w-6 h-6"></span>
+                </a>
+            </div>
+        </div>
+        
+        <!-- Navigation Links (New) -->
+        <nav class="flex items-center space-x-4 sm:space-x-6">
+            <!-- Home Link -->
+            <a href="#hero" class="hidden md:inline text-white hover:text-lime-300 transition duration-150 font-medium">Home</a>
+            <!-- Rules Link -->
+            <a href="#rules" class="hidden md:inline text-white hover:text-lime-300 transition duration-150 font-medium">Rules</a>
+            <!-- Booster Perks Link -->
+            <a href="#vip" class="hidden md:inline text-white hover:text-lime-300 transition duration-150 font-medium">Booster Perks</a>
+
+            <!-- Original CTA link, now a button-style link in the header -->
+            <a href="#join-section" class="discord-btn inline-flex items-center text-sm font-bold px-4 py-2 rounded-lg">
+                Join Server
+                <span data-lucide="arrow-right" class="w-4 h-4 ml-2"></span>
+            </a>
+        </nav>
+    </header>
+
+    <!-- Hero Section (The main attraction) -->
+    <section id="hero" class="w-full max-w-7xl mx-auto text-center py-16 md:py-24">
+        <!-- Banner Image -->
+        <img 
+            src="https://i.imgur.com/9XcksHL.png" 
+            alt="Planet Xplo Banner" 
+            class="w-full mb-8 rounded-lg shadow-lg"
+            onerror="this.onerror=null;this.src='https://placehold.co/800x200/242646/A3E635?text=PLANET+XPLO+BANNER'; this.alt='[Banner Loading Error]'"
+        >
+
+        <!-- Main Headline -->
+        <h2 class="text-4xl sm:text-6xl font-black mb-6 leading-tight">
+            Your New Favorite <span class="text-lime-400">Digital Home</span> is Here.
+        </h2>
+        <!-- Sub-heading / Description -->
+        <p class="text-lg md:text-xl text-gray-300 mb-10 max-w-3xl mx-auto">
+            A vibrant community built around creativity, laughs, and awesome events. Come find your people.
+        </p>
+
+        <!-- Main Call to Action -->
+        <div id="join-section">
+            <!-- Primary Invite Link -->
+            <a href="https://discord.gg/G869ZgdjFz" target="_blank" class="discord-btn inline-flex items-center justify-center text-lg font-bold px-10 py-4 rounded-xl">
+                <span data-lucide="message-square-text" class="w-6 h-6 mr-3"></span>
+                Join Us Now
+            </a>
+            <p class="text-sm text-gray-500 mt-4">Totally Free | No application needed | Instant Access</p>
+        </div>
+    </section>
+
+    <!-- Rules Section -->
+    <section id="rules" class="w-full max-w-7xl py-16 md:py-20">
+        <h3 class="text-3xl font-bold text-center mb-12 flex items-center justify-center space-x-3">
+            <span data-lucide="scroll" class="w-8 h-8 text-lime-400"></span>
+            Official Discord Server Rules
+        </h3>
+        <div class="max-w-4xl mx-auto bg-[#242646] rounded-2xl card-glow overflow-hidden">
+            <p class="text-center text-sm text-gray-400 p-4 border-b border-gray-700">
+                Violating these guidelines will typically lead to a permanent ban. We permit discussion and use of client modifications such as BetterDiscord and Vencord.
+            </p>
+
+            <!-- Rule Category 1: Adherence to Discord's Guidelines -->
+            <div class="accordion-item">
+                <div class="accordion-header rule-header flex items-center justify-between p-6">
+                    <h4 class="text-xl font-bold flex items-center space-x-3">
+                        <span data-lucide="shield" class="text-lime-400 w-6 h-6"></span>
+                        <span>1. Adherence to Discord's Guidelines</span>
+                    </h4>
+                    <span data-lucide="chevron-down" class="w-6 h-6 text-gray-400 transition-transform duration-300"></span>
+                </div>
+                <div class="accordion-content rule-content text-gray-300">
+                    <p class="mb-4">You must strictly adhere to Discord's Terms of Service and Community Guidelines.</p>
+                    <ul class="space-y-2 text-sm">
+                        <li>**Age and Technology (1.1, 1.2):** Members must meet Discord's minimum age (13+). Do not use self-bots, API exploits, or any actions harmful to Discord's servers.</li>
+                        <li>**Security Threats (1.3):** Do not engage in, organize, or joke about raids, doxxing, or swatting. Sharing doxxing information is also strictly forbidden. Report issues via ticket.</li>
+                        <li>**Malicious Content (1.4):** Do not send malware, viruses, malicious links, scams, or IP grabbers. Discussion of these topics is restricted to specific channels and must not involve sharing source code or teaching creation methods.</li>
+                        <li>**Privacy (1.5, 1.6):** Do not leak any private, identifiable information (e.g., IPs, addresses, legal names). No recording of voice channels (VCs) without the consent of everyone present.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Rule Category 2: No NSFW Content / Gore / Explicit Behavior -->
+            <div class="accordion-item">
+                <div class="accordion-header rule-header flex items-center justify-between p-6">
+                    <h4 class="text-xl font-bold flex items-center space-x-3">
+                        <span data-lucide="ban" class="text-red-400 w-6 h-6"></span>
+                        <span>2. No NSFW Content / Gore / Explicit Behavior</span>
+                    </h4>
+                    <span data-lucide="chevron-down" class="w-6 h-6 text-gray-400 transition-transform duration-300"></span>
+                </div>
+                <div class="accordion-content rule-content text-gray-300">
+                    <p class="mb-4">We maintain a zero-tolerance policy in this area due to the presence of minors.</p>
+                    <ul class="space-y-2 text-sm">
+                        <li>**Sexual & Shocking Content (2.1, 2.2, 2.4, 2.5):** Absolutely no content, conversation, jokes, or media that is NSFW, NSFL (gore), or suggestive. This includes cropped images, optical illusions, and any media implying explicit content.</li>
+                        <li>**Flirting and E-Dating (2.3):** Do not engage in e-dating or flirting. This includes sending media or making comments with the intent of "hitting on" or "rizzing up" other members. Do not enter the server with the intent to find people to flirt with.</li>
+                        <li>**Sexualizing Minors (2.6):** Zero tolerance for any joke or comment that sexualizes a minor. If you flirt with someone who is found to be a minor, you will be punished.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Rule Category 3: Conduct and Respect -->
+            <div class="accordion-item">
+                <div class="accordion-header rule-header flex items-center justify-between p-6">
+                    <h4 class="text-xl font-bold flex items-center space-x-3">
+                        <span data-lucide="handshake" class="text-yellow-400 w-6 h-6"></span>
+                        <span>3. Conduct and Respect</span>
+                    </h4>
+                    <span data-lucide="chevron-down" class="w-6 h-6 text-gray-400 transition-transform duration-300"></span>
+                </div>
+                <div class="accordion-content rule-content text-gray-300">
+                    <p class="mb-4">Maintain a civil and respectful environment for all members.</p>
+                    <ul class="space-y-2 text-sm">
+                        <li>**Positive Atmosphere (3.1):** Do not troll, be toxic, be rude, or cause arguments. If you are unable to be kind and respectful, you will face punishment. Take arguments to DMs or avoid them entirely.</li>
+                        <li>**Hate Speech (3.2):** Zero tolerance for all forms of hate speech (racism, sexism, homophobia, transphobia, xenophobia). This includes profile symbols (like the swastika) and death threats (even if meant as a joke).</li>
+                        <li>**Sensitive Topics (3.3, 3.4):** Avoid topics like politics, religion, war, sexuality, or gender if they lead to drama. Do not ragebait by intentionally provoking controversial discussions.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Rule Category 4: Server Organization -->
+            <div class="accordion-item">
+                <div class="accordion-header rule-header flex items-center justify-between p-6">
+                    <h4 class="text-xl font-bold flex items-center space-x-3">
+                        <span data-lucide="layout-grid" class="text-blue-400 w-6 h-6"></span>
+                        <span>4. Server Organization</span>
+                    </h4>
+                    <span data-lucide="chevron-down" class="w-6 h-6 text-gray-400 transition-transform duration-300"></span>
+                </div>
+                <div class="accordion-content rule-content text-gray-300">
+                    <p class="mb-4">Keep the server running smoothly by avoiding disruptive actions.</p>
+                    <ul class="space-y-2 text-sm">
+                        <li>**Spamming (4.1):** Do not spam chat, media, reactions, pings, or flood channels. VC spamming includes excessive soundboards, screaming, or rapidly joining/leaving.</li>
+                        <li>**Nuisance Behavior (4.2, 4.3):** Avoid irritating or annoying numerous members. Do not send loud ("ear-rape") or excessively bright media that could trigger photosensitivity issues.</li>
+                        <li>**Moderation Bypass (4.4, 4.5):** Do not mini-mod (correct others' behavior, threaten punishment, or argue with mod actions). Use the report system. Do not attempt to bypass Automod filters using altered spelling.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Rule Category 5: Profiles and Advertising -->
+            <div class="accordion-item">
+                <div class="accordion-header rule-header flex items-center justify-between p-6">
+                    <h4 class="text-xl font-bold flex items-center space-x-3">
+                        <span data-lucide="user-check" class="text-purple-400 w-6 h-6"></span>
+                        <span>5. Profiles and Advertising</span>
+                    </h4>
+                    <span data-lucide="chevron-down" class="w-6 h-6 text-gray-400 transition-transform duration-300"></span>
+                </div>
+                <div class="accordion-content rule-content text-gray-300">
+                    <ul class="space-y-2 text-sm">
+                        <li>**Profiles (6.1, 6.2):** Your entire Discord profile must adhere to all server rules. Do not impersonate staff or key figures.</li>
+                        <li>**Advertising (7.1, 7.2):** DM advertising is prohibited. All promotional content (links, invites) must be posted only in the designated advertising channels.</li>
+                    </ul>
+                    <p class="mt-4 pt-4 border-t border-gray-700 text-sm italic text-gray-400">
+                        **💡 Final Note (8.0):** Intentional attempts to bend the rules or find loopholes will result in moderator action. Report fairness concerns to server managers or XploPlayZYTube.
+                    </p>
+                </div>
+            </div>
+            
+        </div>
+    </section>
+    
+    <!-- FAQ Section (UPDATED) -->
+    <section id="faq" class="w-full max-w-7xl py-16 md:py-20">
+        <h3 class="text-3xl font-bold text-center mb-12 flex items-center justify-center space-x-3">
+            <span data-lucide="help-circle" class="w-8 h-8 text-lime-400"></span>
+            Frequently Asked Questions
+        </h3>
+        <div class="max-w-4xl mx-auto bg-[#242646] rounded-2xl card-glow overflow-hidden">
+
+            <!-- FAQ 1: What is Planet Xplo about? -->
+            <div class="accordion-item">
+                <div class="accordion-header faq-header flex items-center justify-between p-6">
+                    <h4 class="text-xl font-semibold">
+                        What kind of community is Planet Xplo?
+                    </h4>
+                    <span data-lucide="chevron-down" class="w-6 h-6 text-gray-400 transition-transform duration-300"></span>
+                </div>
+                <div class="accordion-content faq-content text-gray-300">
+                    <p>
+                        Planet Xplo is a large, general-purpose digital home centered around **gaming, content creation, and real-time events**. We host regular voice chat streams, movie nights, game tournaments, and provide spaces for artists and creators to showcase their work.
+                    </p>
+                </div>
+            </div>
+
+            <!-- FAQ 2: What is the minimum age to join? -->
+            <div class="accordion-item">
+                <div class="accordion-header faq-header flex items-center justify-between p-6">
+                    <h4 class="text-xl font-semibold">
+                        What is the minimum age requirement to join the server?
+                    </h4>
+                    <span data-lucide="chevron-down" class="w-6 h-6 text-gray-400 transition-transform duration-300"></span>
+                </div>
+                <div class="accordion-content faq-content text-gray-300">
+                    <p>
+                        As per Discord's Terms of Service, you must be at least **13 years old** to join Planet Xplo. Due to our zero-tolerance policy against NSFW content and gore, we strictly enforce compliance with all Discord guidelines.
+                    </p>
+                </div>
+            </div>
+
+            <!-- FAQ 3: How do I become a staff member? -->
+            <div class="accordion-item">
+                <div class="accordion-header faq-header flex items-center justify-between p-6">
+                    <h4 class="text-xl font-semibold">
+                        How can I apply to become a staff or moderator?
+                    </h4>
+                    <span data-lucide="chevron-down" class="w-6 h-6 text-gray-400 transition-transform duration-300"></span>
+                </div>
+                <div class="accordion-content faq-content text-gray-300">
+                    <p>
+                        Staff applications are opened periodically. The best way to be noticed is to be an active, positive, and helpful member of the community. When applications are open, links will be posted in the <span class="text-lime-400 font-bold">#announcements</span> channel.
+                    </p>
+                </div>
+            </div>
+
+            <!-- FAQ 4: What are "Rank Roles"? -->
+            <div class="accordion-item">
+                <div class="accordion-header faq-header flex items-center justify-between p-6">
+                    <h4 class="text-xl font-semibold">
+                        What are "Rank Roles" and how do I get them?
+                    </h4>
+                    <span data-lucide="chevron-down" class="w-6 h-6 text-gray-400 transition-transform duration-300"></span>
+                </div>
+                <div class="accordion-content faq-content text-gray-300">
+                    <p>
+                        Rank Roles are custom, exclusive titles and colors you earn automatically based on your activity level (messages sent, time in VC) within the server. They are a fun way to show off your seniority and dedication! They are obtained passively just by participating.
+                    </p>
+                </div>
+            </div>
+
+            <!-- FAQ 5: What is the appeal link for? -->
+            <div class="accordion-item">
+                <div class="accordion-header faq-header flex items-center justify-between p-6">
+                    <h4 class="text-xl font-semibold">
+                        I was banned. Can I appeal the decision?
+                    </h4>
+                    <span data-lucide="chevron-down" class="w-6 h-6 text-gray-400 transition-transform duration-300"></span>
+                </div>
+                <div class="accordion-content faq-content text-gray-300">
+                    <p>
+                        Yes, we believe in fairness. If you were muted, warned, or banned and believe it was an error, you can submit a formal appeal using the link in the <a href="#moderation" class="text-lime-400 hover:underline">Moderation & Transparency</a> section.
+                    </p>
+                </div>
+            </div>
+
+            <!-- FAQ 6: Do you host live events or streams? -->
+            <div class="accordion-item">
+                <div class="accordion-header faq-header flex items-center justify-between p-6">
+                    <h4 class="text-xl font-semibold">
+                        Do you host live events, game nights, or streams?
+                    </h4>
+                    <span data-lucide="chevron-down" class="w-6 h-6 text-gray-400 transition-transform duration-300"></span>
+                </div>
+                <div class="accordion-content faq-content text-gray-300">
+                    <p>
+                        Absolutely! We host multiple live events every week, including movie nights, game tournaments (with prizes!), and Q&A sessions with the server owner. Check the <span class="text-lime-400 font-bold">#events</span> channel and keep an eye on our Voice Channels for live streams and broadcasts!
+                    </p>
+                </div>
+            </div>
+
+            <!-- FAQ 7: Is the server free to use? -->
+            <div class="accordion-item">
+                <div class="accordion-header faq-header flex items-center justify-between p-6">
+                    <h4 class="text-xl font-semibold">
+                        Is Planet Xplo completely free to join and use?
+                    </h4>
+                    <span data-lucide="chevron-down" class="w-6 h-6 text-gray-400 transition-transform duration-300"></span>
+                </div>
+                <div class="accordion-content faq-content text-gray-300">
+                    <p>
+                        Yes, joining and participating in Planet Xplo is entirely free! We do not require any payment or subscription. We are supported by optional, non-intrusive methods like YouTube ad revenue and occasional sponsored events. Any paid features (like Discord Server Boosts) are purely voluntary.
+                    </p>
+                </div>
+            </div>
+
+            <!-- FAQ 8: What is the main voice chat etiquette? -->
+            <div class="accordion-item">
+                <div class="accordion-header faq-header flex items-center justify-between p-6">
+                    <h4 class="text-xl font-semibold">
+                        What is the expected etiquette in Voice Channels (VCs)?
+                    </h4>
+                    <span data-lucide="chevron-down" class="w-6 h-6 text-gray-400 transition-transform duration-300"></span>
+                </div>
+                <div class="accordion-content faq-content text-gray-300">
+                    <p>
+                        In our general VCs, we ask that you maintain a civil tone, avoid excessive screaming or ear-rape noises, and use push-to-talk if you have a loud background. Please be respectful of the conversation flow. Specific VCs (like music or stream rooms) may have additional pinned rules.
+                    </p>
+                </div>
+            </div>
+
+            <!-- FAQ 9: Which channel should I start with? -->
+            <div class="accordion-item">
+                <div class="accordion-header faq-header flex items-center justify-between p-6">
+                    <h4 class="text-xl font-semibold">
+                        I just joined. Which channel should I start with?
+                    </h4>
+                    <span data-lucide="chevron-down" class="w-6 h-6 text-gray-400 transition-transform duration-300"></span>
+                </div>
+                <div class="accordion-content faq-content text-gray-300">
+                    <p>
+                        Welcome! We recommend heading straight to the <span class="text-lime-400 font-bold">#rules</span> channel for a quick review, then jump into <span class="text-lime-400 font-bold">#general</span> chat to introduce yourself and say hi. You can also check out <span class="text-lime-400 font-bold">#roles</span> to grab some self-assignable roles!
+                    </p>
+                </div>
+            </div>
+
+            <!-- NEW FAQ 10: How to talk with the owner -->
+            <div class="accordion-item">
+                <div class="accordion-header faq-header flex items-center justify-between p-6">
+                    <h4 class="text-xl font-semibold">
+                        How can I talk directly with the server owner, XploPlayZYTube?
+                    </h4>
+                    <span data-lucide="chevron-down" class="w-6 h-6 text-gray-400 transition-transform duration-300"></span>
+                </div>
+                <div class="accordion-content faq-content text-gray-300">
+                    <p>
+                        The owner, XploPlayZYTube, frequently hosts live Voice Chat Q&A sessions. These are the best times to interact directly and ask him questions about his content, the server, or anything else! Keep an eye on the <span class="text-lime-400 font-bold">#announcements</span> and <span class="text-lime-400 font-bold">#events</span> channels for scheduled times.
+                    </p>
+                </div>
+            </div>
+
+        </div>
+    </section>
+    
+    <!-- VIP / Booster Section -->
+    <section id="vip" class="w-full max-w-7xl py-16 md:py-20">
+        <h3 class="text-3xl font-bold text-center mb-12 flex items-center justify-center space-x-3">
+            <span data-lucide="gem" class="w-8 h-8 text-pink-400"></span>
+            Server Boosters & VIP Perks
+            <span data-lucide="gem" class="w-8 h-8 text-pink-400"></span>
+        </h3>
+        <div class="max-w-4xl mx-auto p-8 bg-[#242646] rounded-2xl card-glow border-2 border-pink-500/50">
+            <p class="text-center text-lg text-gray-300 mb-8">
+                Support Planet Xplo with a Discord Server Boost and unlock exclusive benefits to enhance your experience and help the server grow!
+            </p>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                
+                <!-- Perk 1: Custom Role/Color -->
+                <div class="flex items-start space-x-4 bg-[#1a1a2e] p-4 rounded-xl shadow-lg">
+                    <span data-lucide="palette" class="w-8 h-8 text-pink-400 flex-shrink-0 mt-1"></span>
+                    <div>
+                        <h4 class="text-xl font-semibold text-lime-400">Exclusive VIP Role</h4>
+                        <p class="text-gray-400 text-sm">Receive a special pink booster role, displayed above all normal members, and unlock the ability to use a custom color for your name.</p>
+                    </div>
+                </div>
+
+                <!-- Perk 2: Priority Support -->
+                <div class="flex items-start space-x-4 bg-[#1a1a2e] p-4 rounded-xl shadow-lg">
+                    <span data-lucide="send-to-back" class="w-8 h-8 text-pink-400 flex-shrink-0 mt-1"></span>
+                    <div>
+                        <h4 class="text-xl font-semibold text-lime-400">Priority Ticket Support</h4>
+                        <p class="text-gray-400 text-sm">Get your questions, reports, and appeals handled faster. Boosters jump to the front of the support queue.</p>
+                    </div>
+                </div>
+
+                <!-- Perk 3: Voice Channel Access -->
+                <div class="flex items-start space-x-4 bg-[#1a1a2e] p-4 rounded-xl shadow-lg">
+                    <span data-lucide="mic-2" class="w-8 h-8 text-pink-400 flex-shrink-0 mt-1"></span>
+                    <div>
+                        <h4 class="text-xl font-semibold text-lime-400">Custom Voice Channels</h4>
+                        <p class="text-gray-400 text-sm">Gain access to booster-only voice channels for a more exclusive and private chat experience.</p>
+                    </div>
+                </div>
+
+                <!-- Perk 4: Custom Emoji Uploads -->
+                <div class="flex items-start space-x-4 bg-[#1a1a2e] p-4 rounded-xl shadow-lg">
+                    <span data-lucide="smile-plus" class="w-8 h-8 text-pink-400 flex-shrink-0 mt-1"></span>
+                    <div>
+                        <h4 class="text-xl font-semibold text-lime-400">Custom Emoji Submission</h4>
+                        <p class="text-gray-400 text-sm">Booster exclusive: The ability to submit ideas for new custom emojis we can add to the server!</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="text-center mt-10">
+                <a href="https://discord.com/servers/planet-xplo-1050596956247941198" target="_blank" class="inline-flex items-center justify-center text-lg font-bold px-10 py-4 rounded-xl bg-pink-500 text-white hover:bg-pink-600 transition duration-200 shadow-md shadow-pink-500/50">
+                    <span data-lucide="zap" class="w-6 h-6 mr-3"></span>
+                    Boost Planet Xplo Today
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section id="features" class="w-full max-w-7xl py-16 md:py-20">
+        <h3 class="text-3xl font-bold text-center mb-12">What Sets Us Apart?</h3>
+
+        <!-- Grid adjusted to fit 6 features (3 columns on desktop, 2 columns on tablet) -->
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+
+            <!-- Feature Card 1: Weekly Live Events -->
+            <div class="bg-[#242646] p-6 rounded-xl card-glow transform hover:scale-[1.02] transition duration-300">
+                <div class="flex items-center space-x-3 mb-4">
+                    <span data-lucide="calendar-check" class="w-8 h-8 text-lime-400"></span>
+                    <h4 class="text-xl font-semibold">Weekly Live Events</h4>
+                </div>
+                <p class="text-gray-400">
+                    From movie nights and gaming tournaments to collaborative music streams, there's always something happening. Never be bored again!
+                </p>
+            </div>
+
+            <!-- Feature Card 2: Creator Showcase Channels -->
+            <div class="bg-[#242646] p-6 rounded-xl card-glow transform hover:scale-[1.02] transition duration-300">
+                <div class="flex items-center space-x-3 mb-4">
+                    <span data-lucide="paintbrush" class="w-8 h-8 text-lime-400"></span>
+                    <h4 class="text-xl font-semibold">Creator Showcase Channels</h4>
+                </div>
+                <p class="text-gray-400">
+                    Share your art, music, videos, and code with a supportive audience. Get feedback and promote your content to thousands of active members.
+                </p>
+            </div>
+
+            <!-- Feature Card 3: Exclusive Rank Roles -->
+            <div class="bg-[#242646] p-6 rounded-xl card-glow transform hover:scale-[1.02] transition duration-300">
+                <div class="flex items-center space-x-3 mb-4">
+                    <span data-lucide="crown" class="w-8 h-8 text-lime-400"></span>
+                    <h4 class="text-xl font-semibold">Exclusive Rank Roles</h4>
+                </div>
+                <p class="text-gray-400">
+                    Climb the ranks simply by chatting and being active! Unlock special roles, hidden channels, and recognition within the community.
+                </p>
+            </div>
+
+            <!-- Feature Card 4: Dedicated Weekly Q&A (UPDATED) -->
+            <div class="bg-[#242646] p-6 rounded-xl card-glow transform hover:scale-[1.02] transition duration-300">
+                <div class="flex items-center space-x-3 mb-4">
+                    <span data-lucide="message-square-more" class="w-8 h-8 text-lime-400"></span>
+                    <h4 class="text-xl font-semibold">Talk With The Owner</h4>
+                </div>
+                <p class="text-gray-400">
+                    Participate in our live weekly voice Q&A sessions where you can talk directly with the owner, <span class="text-white font-medium">XploPlayZYTube</span>, and other staff members!
+                </p>
+            </div>
+            
+            <!-- Feature Card 5: Server Achievements -->
+            <div class="bg-[#242646] p-6 rounded-xl card-glow transform hover:scale-[1.02] transition duration-300">
+                <div class="flex items-center space-x-3 mb-4">
+                    <span data-lucide="award" class="w-8 h-8 text-lime-400"></span>
+                    <h4 class="text-xl font-semibold">Collectible Achievements</h4>
+                </div>
+                <p class="text-gray-400">
+                    Complete fun challenges and milestones to earn permanent achievement badges displayed proudly on your server profile. Gotta catch 'em all!
+                </p>
+            </div>
+
+            <!-- Feature Card 6: Safe, Chill Vibe -->
+            <div class="bg-[#242646] p-6 rounded-xl card-glow transform hover:scale-[1.02] transition duration-300">
+                <div class="flex items-center space-x-3 mb-4">
+                    <span data-lucide="shield-check" class="w-8 h-8 text-lime-400"></span>
+                    <h4 class="text-xl font-semibold">Strict, Fair Moderation</h4>
+                </div>
+                <p class="text-gray-400">
+                    A zero-tolerance policy for toxicity ensures a chill and welcoming environment for everyone. We keep the drama out and the fun in.
+                </p>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Moderation & Transparency Section -->
+    <section id="moderation" class="w-full max-w-7xl py-16 md:py-20">
+        <h3 class="text-3xl font-bold text-center mb-12">Moderation & Transparency</h3>
+
+        <!-- Grid layout updated to 3 columns on desktop/tablet -->
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <!-- Punishment Policy Card (Punishment Section) -->
+            <div class="bg-[#242646] p-8 rounded-2xl card-glow">
+                <div class="flex items-center space-x-4 mb-4">
+                    <span data-lucide="gavel" class="w-10 h-10 text-red-400"></span>
+                    <h4 class="text-2xl font-bold">Punishment Policy</h4>
+                </div>
+                <p class="text-gray-300 mb-4">
+                    We maintain a clear, escalating system for rule violations to ensure fairness. All punishments are logged and reviewed by senior staff.
+                </p>
+                <ul class="text-sm space-y-2 text-gray-400 list-disc list-inside ml-4">
+                    <li>**Warning:** Minor infractions, chat filter bypass.</li>
+                    <li>**7-Day Mute/Ban:** Repeat offenses or moderate rule breaking (e.g., severe spam).</li>
+                    <li>**Permanent Ban:** Toxicity, harassment, illegal content, or evading prior bans.</li>
+                </ul>
+            </div>
+
+            <!-- Appeal Section Card -->
+            <div class="bg-[#242646] p-8 rounded-2xl card-glow flex flex-col justify-between">
+                <div>
+                    <div class="flex items-center space-x-4 mb-4">
+                        <span data-lucide="file-text" class="w-10 h-10 text-lime-400"></span>
+                        <h4 class="text-2xl font-bold">Submit an Appeal</h4>
+                    </div>
+                    <p class="text-gray-300 mb-6">
+                        If you believe you were unfairly warned, muted, or banned, you can submit a formal appeal directly to our moderation team.
+                    </p>
+                </div>
+                <a href="https://appeal.gg/8h2ju8V5xw" target="_blank" class="w-full discord-btn inline-flex items-center justify-center text-lg font-bold px-6 py-3 rounded-xl mt-4">
+                    <span data-lucide="external-link" class="w-5 h-5 mr-3"></span>
+                    Go to Appeal Form
+                </a>
+            </div>
+
+            <!-- Banned Words Policy Card -->
+            <div class="bg-[#242646] p-8 rounded-2xl card-glow">
+                <div class="flex items-center space-x-4 mb-4">
+                    <span data-lucide="filter" class="w-10 h-10 text-orange-400"></span>
+                    <h4 class="text-2xl font-bold">Banned Words Policy</h4>
+                </div>
+                <p class="text-gray-300 mb-4">
+                    Our server utilizes an automated word filter to keep the chat clean and safe for all ages.
+                </p>
+                <ul class="text-sm space-y-2 text-gray-400 list-disc list-inside ml-4">
+                    <li>**Auto-Deletion:** High-severity slurs, hate speech, and explicit content are blocked instantly.</li>
+                    <li>**Warning/Mute Trigger:** Repeated attempts to bypass the filter will result in an automated warning.</li>
+                    <li>**Context is Key:** While we filter, we rely on staff to manually review cases where context is important.</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Staff Application Benefits -->
+    <section id="staff-benefits" class="w-full max-w-7xl py-16 md:py-20 bg-[#242646] rounded-2xl my-10 card-glow">
+        <h3 class="text-3xl font-bold text-center mb-10">Join Our Crew: Why Apply for Staff?</h3>
+        
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8 p-4">
+            <!-- Benefit 1 -->
+            <div class="text-center p-4 border-r border-gray-700 md:border-r-0 md:border-b-0">
+                <span data-lucide="settings" class="w-10 h-10 text-lime-400 mx-auto mb-3"></span>
+                <h4 class="text-xl font-semibold mb-2">Direct Impact</h4>
+                <p class="text-gray-400 text-sm">Influence server events, policy, and channel management. Help shape the future of Planet Xplo.</p>
+            </div>
+            
+            <!-- Benefit 2 -->
+            <div class="text-center p-4 border-r border-gray-700">
+                <span data-lucide="briefcase" class="w-10 h-10 text-lime-400 mx-auto mb-3"></span>
+                <h4 class="text-xl font-semibold mb-2">Skill Development</h4>
+                <p class="text-gray-400 text-sm">Gain valuable, real-world experience in team leadership, conflict resolution, and digital management.</p>
+            </div>
+            
+            <!-- Benefit 3 -->
+            <div class="text-center p-4">
+                <span data-lucide="users" class="w-10 h-10 text-lime-400 mx-auto mb-3"></span>
+                <h4 class="text-xl font-semibold mb-2">Exclusive Access</h4>
+                <p class="text-gray-400 text-sm">Unlock private staff channels, early access to features, and the chance to meet new friends in a dedicated team.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- How to Join Section (Simple Steps) -->
+    <section id="steps" class="w-full max-w-5xl py-16 md:py-20 text-center">
+        <!-- CUSTOMIZE 13: The steps text/descriptions (optional) -->
+        <h3 class="text-3xl font-bold mb-10">It only takes 30 seconds to join!</h3>
+        <div class="grid grid-cols-1 sm:grid-cols-3 gap-6">
+            <!-- Step 1 -->
+            <div class="p-4">
+                <div class="text-5xl font-extrabold text-lime-500 mb-3">1.</div>
+                <h4 class="text-xl font-semibold mb-2">Click the Button</h4>
+                <p class="text-gray-400 text-sm">Use the big 'Join Now' button below to get your invite.</p>
+            </div>
+            <!-- Step 2 -->
+            <div class="p-4">
+                <div class="text-5xl font-extrabold text-lime-500 mb-3">2.</div>
+                <h4 class="text-xl font-semibold mb-2">Accept the Invite</h4>
+                <p class="text-gray-400 text-sm">Discord will open. Hit 'Accept Invite' to enter the server.</p>
+            </div>
+            <!-- Step 3 -->
+            <div class="p-4">
+                <div class="text-5xl font-extrabold text-lime-500 mb-3">3.</div>
+                <h4 class="text-xl font-semibold mb-2">Verify & Chat</h4>
+                <p class="text-gray-400 text-sm">Complete our quick verification (if required) and say hi in #general!</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Final Call to Action -->
+    <section class="w-full max-w-4xl text-center py-16 md:py-20 bg-[#242646] rounded-2xl my-10 card-glow">
+        <!-- CUSTOMIZE 14: Final CTA text -->
+        <h3 class="text-3xl font-bold mb-4">Ready to Dive In?</h3>
+        <p class="text-gray-300 mb-8 max-w-2xl mx-auto">
+            Don't miss out on the action. Click below and start connecting with thousands of fellow community members today.
+        </p>
+        <!-- CUSTOMIZE 15: Final Invite Link (MANDATORY) -->
+        <a href="https://discord.gg/G869ZgdjFz" target="_blank" class="discord-btn inline-flex items-center justify-center text-xl font-bold px-12 py-5 rounded-xl">
+            <span data-lucide="zap" class="w-6 h-6 mr-3"></span>
+            Join Us Now
+        </a>
+    </section>
+
+    <!-- Footer -->
+    <footer class="w-full max-w-7xl text-center py-6 border-t border-gray-800 mt-auto">
+        <p class="text-sm text-gray-500">
+            &copy; <span id="current-year"></span> Planet Xplo. All rights reserved. | <a href="#rules" class="hover:text-lime-400">Rules</a> | <a href="#faq" class="hover:text-lime-400">FAQ</a>
+        </p>
+    </footer>
+
+    <!-- Script to initialize Lucide icons, set current year, and handle accordion -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            // Replace data-lucide attributes with SVG icons
+            if (typeof lucide !== 'undefined') {
+                lucide.createIcons();
+            }
+
+            // Set current year in footer
+            document.getElementById('current-year').textContent = new Date().getFullYear();
+            
+            // Universal smooth scroll logic for all internal anchor links
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function (e) {
+                    // Prevent default anchor click behavior
+                    e.preventDefault();
+                    
+                    const targetId = this.getAttribute('href');
+                    const targetElement = document.querySelector(targetId);
+                    
+                    if (targetElement) {
+                        targetElement.scrollIntoView({
+                            behavior: 'smooth'
+                        });
+                    }
+                });
+            });
+
+
+            // Universal Accordion Logic for both Rules and FAQ
+            const accordionHeaders = document.querySelectorAll('.accordion-header');
+
+            accordionHeaders.forEach(header => {
+                header.addEventListener('click', () => {
+                    const content = header.nextElementSibling;
+                    const icon = header.querySelector('[data-lucide="chevron-down"]');
+                    
+                    // Close all other open accordion contents in the same section container
+                    const parentContainer = header.closest('div.card-glow');
+                    if (parentContainer) {
+                        parentContainer.querySelectorAll('.accordion-content.active').forEach(item => {
+                            if (item !== content) {
+                                item.classList.remove('active');
+                                item.previousElementSibling.querySelector('[data-lucide="chevron-down"]').classList.remove('rotate-180');
+                            }
+                        });
+                    }
+
+                    // Toggle the clicked rule content
+                    content.classList.toggle('active');
+                    icon.classList.toggle('rotate-180');
+                });
+            });
+        });
+    </script>
+</body>
+</html>
